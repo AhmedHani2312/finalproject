@@ -1,0 +1,17 @@
+/* Personalityform.css */
+.personality-form-container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  .radio-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Add more styles as needed */
+  
