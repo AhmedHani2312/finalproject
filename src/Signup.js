@@ -4,7 +4,7 @@ import './Signup.css'; // Import your CSS file for additional styling
 import axios from 'axios';
 
 const Signup = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
   // Form state
   const [formData, setFormData] = useState({
     firstName: '',
