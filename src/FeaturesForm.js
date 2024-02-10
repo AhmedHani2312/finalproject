@@ -22,6 +22,7 @@ const FeaturesForm = () => {
         '3.7': false,
         '3.8': false,
         '3.9': false,
+        
         // Add as many features as you have
     });
 
