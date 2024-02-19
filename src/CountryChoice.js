@@ -31,7 +31,10 @@ const CountryChoice = () => {
         question_id: 7,
         uni_country: lowercaseCountryCode // Send the lowercase ISO code
       });
-      navigate('/rating', { state: { userId, userEmail } });
+      //navigate('/rating', { state: { userId, userEmail ,  country: lowercaseCountryCode  } });
+
+      navigate('/rating', { state: { userId, userEmail, country: selectedCountryCode } });
+    
     } catch (error) {
       console.error('Error submitting country choice:', error);
     }
@@ -42,7 +45,7 @@ const CountryChoice = () => {
       <h2>Select a Country for your Future University</h2>
       <form onSubmit={handleSubmit}>
         <select onChange={handleCountryChange} value={selectedCountryCode}>
-          <option value="" disabled>Select a Country...</option>
+          <option value="" disabled>Select a country...</option>
           {countryOptions.map(({ code, name }) => (
             <option key={code} value={code}>
               {name}
