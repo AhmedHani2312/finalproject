@@ -8,7 +8,6 @@ const CountryChoice = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [selectedCountryCode, setSelectedCountryCode] = useState('');
-
   const userId = location.state?.userId;
   const userEmail = location.state?.userEmail;
 
@@ -23,18 +22,15 @@ const CountryChoice = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const lowercaseCountryCode = selectedCountryCode.toLowerCase(); // Convert to lowercase
-
+    const codeMap = { gb: 'uk' }; // Add more mappings if necessary
+    const convertedCode = codeMap[selectedCountryCode.toLowerCase()] || selectedCountryCode.toLowerCase();
     try {
       await axios.post('http://localhost:3000/user/submitCountryChoice', {
         user_id: userId,
         question_id: 7,
-        uni_country: lowercaseCountryCode // Send the lowercase ISO code
+        uni_country: convertedCode
       });
-      //navigate('/rating', { state: { userId, userEmail ,  country: lowercaseCountryCode  } });
-
-      navigate('/rating', { state: { userId, userEmail, country: selectedCountryCode } });
-    
+      navigate('/rating', { state: { userId, userEmail, country: convertedCode } });
     } catch (error) {
       console.error('Error submitting country choice:', error);
     }
@@ -47,9 +43,7 @@ const CountryChoice = () => {
         <select onChange={handleCountryChange} value={selectedCountryCode}>
           <option value="" disabled>Select a country...</option>
           {countryOptions.map(({ code, name }) => (
-            <option key={code} value={code}>
-              {name}
-            </option>
+            <option key={code} value={code}>{name}</option>
           ))}
         </select>
         <button type="submit">Next Page</button>

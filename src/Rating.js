@@ -1,34 +1,29 @@
-//rating page
 import React, { useState, useEffect } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Rating.css';
 
 const Rating = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [universities, setUniversities] = useState([]);
   const [ratings, setRatings] = useState({});
+  const { country } = location.state;
 
   useEffect(() => {
-    // Fetch the random university names when the component mounts
-    axios.get('http://localhost:3000/university/randomUniversities')
+    axios.get(`http://localhost:3000/university/randomUniversities?country=${country}`)
       .then(response => {
-        const uniNames = response.data; // Assuming this is an array of university names
+        const uniNames = response.data;
         setUniversities(uniNames);
-
-        // Initialize ratings for each university
         const initialRatings = uniNames.reduce((acc, name, index) => {
-          acc[`uni${index + 1}`] = 1; // Start ratings at 1
+          acc[`uni${index + 1}`] = 1;
           return acc;
         }, {});
-
         setRatings(initialRatings);
       })
-      .catch(error => {
-        console.error('Error fetching universities:', error);
-      });
-  }, []);
+      .catch(error => console.error('Error fetching universities:', error));
+  }, [country]);
 
   const handleStarClick = (nextValue, name) => {
     setRatings({ ...ratings, [name]: nextValue });
@@ -41,23 +36,19 @@ const Rating = () => {
 
   return (
     <div className="rating-container">
-      <h1>Rate the Universities</h1>
-      <h4>(Refresh for another List of Universites)</h4>
+      <h2>Rate the Universities</h2>
       <div className="universities-container">
-        {universities.map((name, index) => {
-          const uniKey = `uni${index + 1}`;
-          return (
-            <div key={uniKey} className="university-box">
-              <span>{name}</span>
-              <StarRatingComponent
-                name={uniKey}
-                starCount={5}
-                value={ratings[uniKey]}
-                onStarClick={(nextValue) => handleStarClick(nextValue, uniKey)}
-              />
-            </div>
-          );
-        })}
+        {universities.map((name, index) => (
+          <div key={`uni${index + 1}`} className="university-box">
+            <span>{name}</span>
+            <StarRatingComponent
+              name={`uni${index + 1}`}
+              starCount={5}
+              value={ratings[`uni${index + 1}`]}
+              onStarClick={(nextValue) => handleStarClick(nextValue, `uni${index + 1}`)}
+            />
+          </div>
+        ))}
       </div>
       <button onClick={handleSubmit}>Submit Ratings</button>
     </div>
