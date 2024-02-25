@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import StarRatingComponent from 'react-star-rating-component';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Rating.css';
@@ -17,7 +16,7 @@ const Rating = () => {
         const uniNames = response.data;
         setUniversities(uniNames);
         const initialRatings = uniNames.reduce((acc, name, index) => {
-          acc[`uni${index + 1}`] = 1;
+          acc[`uni${index + 1}`] = 0; // Initialize ratings at 0 for progress bar
           return acc;
         }, {});
         setRatings(initialRatings);
@@ -25,30 +24,40 @@ const Rating = () => {
       .catch(error => console.error('Error fetching universities:', error));
   }, [country]);
 
-  const handleStarClick = (nextValue, name) => {
-    setRatings({ ...ratings, [name]: nextValue });
+  const handleRatingChange = (event, name) => {
+    const { value } = event.target;
+    setRatings({ ...ratings, [name]: Number(value) });
   };
 
   const handleSubmit = () => {
     console.log('Ratings:', ratings);
     navigate('/recommendation');
   };
+ 
 
+  
   return (
     <div className="rating-container">
       <h2>Rate the Universities</h2>
       <div className="universities-container">
-        {universities.map((name, index) => (
-          <div key={`uni${index + 1}`} className="university-box">
-            <span>{name}</span>
-            <StarRatingComponent
-              name={`uni${index + 1}`}
-              starCount={5}
-              value={ratings[`uni${index + 1}`]}
-              onStarClick={(nextValue) => handleStarClick(nextValue, `uni${index + 1}`)}
-            />
-          </div>
-        ))}
+        {universities.map((name, index) => {
+          const uniKey = `uni${index + 1}`;
+          return (
+            <div key={uniKey} className="university-box">
+              <span>{name}</span>
+              <input
+                type="range"
+                name={uniKey}
+                min="0"
+                max="100"
+                value={ratings[uniKey]}
+                onChange={(event) => handleRatingChange(event, uniKey)}
+                className="rating-range"
+              />
+              <div>{ratings[uniKey]}%</div>
+            </div>
+          );
+        })}
       </div>
       <button onClick={handleSubmit}>Submit Ratings</button>
     </div>
@@ -56,3 +65,11 @@ const Rating = () => {
 };
 
 export default Rating;
+
+
+
+
+
+
+
+
