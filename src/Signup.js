@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 import './Signup.css';
@@ -8,8 +8,6 @@ import universities from './universities.json';
 
 const Signup = () => {
     const navigate = useNavigate();
-    const [selectedUniversity, setSelectedUniversity] = useState(null);
-    const [selectedCountry, setSelectedCountry] = useState(null);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -20,25 +18,49 @@ const Signup = () => {
         university: '',
     });
 
-    // Handle changes in text inputs
+    const [selectedCountry, setSelectedCountry] = useState(null);
+    const [selectedUniversity, setSelectedUniversity] = useState(null);
+    const [filteredUniversities, setFilteredUniversities] = useState([]);
+
+    useEffect(() => {
+        setFilteredUniversities(universities.slice(0, 100).map(uni => ({
+            value: uni.University,
+            label: uni.University
+        })));
+    }, []);
+
+    const filterUniversities = inputValue => {
+        return universities
+            .filter(uni => uni.University.toLowerCase().includes(inputValue.toLowerCase()))
+            .map(filteredUni => ({ value: filteredUni.University, label: filteredUni.University }));
+    };
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    // Handle university selection
     const handleUniversityChange = (selectedOption) => {
         setSelectedUniversity(selectedOption);
         setFormData({ ...formData, university: selectedOption ? selectedOption.value : '' });
     };
 
-    // Handle country selection
     const handleCountryChange = (selectedOption) => {
         setSelectedCountry(selectedOption);
         setFormData({ ...formData, country: selectedOption ? selectedOption.value : '' });
     };
 
-    // Handle form submission
+    const handleUniversityInputChange = (value) => {
+        if (value.length > 2) {
+            setFilteredUniversities(filterUniversities(value));
+        } else {
+            setFilteredUniversities(universities.slice(0, 100).map(uni => ({
+                value: uni.University,
+                label: uni.University
+            })));
+        }
+    };
+
     const handleSignup = async (e) => {
         e.preventDefault();
         const dataToSend = {
@@ -46,9 +68,9 @@ const Signup = () => {
             last_name: formData.lastName,
             gender: formData.gender,
             age_range: formData.ageRange,
-            country: selectedCountry ? selectedCountry.value : formData.country,
+            country: selectedCountry ? selectedCountry.value : '',
             email: formData.email,
-            university_name: selectedUniversity ? selectedUniversity.value : formData.university,
+            university_name: selectedUniversity ? selectedUniversity.value : '',
         };
 
         try {
@@ -59,12 +81,6 @@ const Signup = () => {
         }
     };
 
-    // Prepare options for the select components
-    const universityOptions = universities.map(uni => ({
-        value: uni.University,
-        label: uni.University,
-    }));
-
     const countryOptions = Object.entries(countriesList).map(([_, country]) => ({
         value: country.name,
         label: country.name,
@@ -72,8 +88,8 @@ const Signup = () => {
 
     return (
         <div className="signup-container">
-            <h2>Sign Up</h2>
             <form className="signup-form" onSubmit={handleSignup}>
+                <h2>Sign Up</h2>
                 <div className="form-group">
                     <label>First Name:</label>
                     <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
@@ -123,7 +139,8 @@ const Signup = () => {
                     <Select
                         value={selectedUniversity}
                         onChange={handleUniversityChange}
-                        options={universityOptions}
+                        onInputChange={handleUniversityInputChange}
+                        options={filteredUniversities}
                         className="basic-single"
                         classNamePrefix="select"
                         placeholder="Select a university..."

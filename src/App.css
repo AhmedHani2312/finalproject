@@ -1,38 +1,79 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-image: url('../public/images/university-background.png');
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  color: #f8f8f8; /* Adjusted for improved visibility */
+}
+
+.App-top-bar {
+  background-color: #333; /* Darker for better contrast */
   color: white;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.App-top-bar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 15px; /* More rounded for a modern look */
+  font-size: 20px; /* Larger for readability */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-top-bar button:hover {
+  background-color: #0056e0;
+  transform: scale(1.1);
+}
+
+.App-header {
+  width: 90%; /* Increase for wider content area */
+  max-width: 1400px;
+  padding: 80px; /* More space inside */
+  background-color: rgba(0, 21, 41, 0.85); /* Slightly adjusted for theme consistency */
+  border-radius: 30px; /* Smoother corners */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+  margin-top: 120px; /* More space from the top bar */
+  color: #ffffff; /* Ensured high contrast */
+}
+
+.get-started-btn {
+  background-color: #ffaa00;
+  color: white;
+  padding: 0px 30px; /* Larger button */
+  border-radius: 20px; /* More rounded */
+  font-size: 32px; /* Larger text */
+  margin: 80px 0; /* Increased space from the text above */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.get-started-btn:hover {
+  background-color: #cc8e00;
+  transform: scale(100.15); /* More noticeable hover effect */
+}
+
+.App-link, .welcome-text {
+  color: #4dd0e1; /* Bright, engaging color */
+  font-size: 32px; /* Larger for impact */
+  margin: 30px 0; /* Adjust spacing as needed */
+}
+
+.welcome-text {
+  margin-bottom: 40px; /* More space above the description */
+  font-weight: bold;
 }

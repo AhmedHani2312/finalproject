@@ -1,11 +1,11 @@
-/* FeaturesForm.css */
 .features-form-container {
   max-width: 800px;
-  margin: auto;
+  margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFE0; /* Light yellow background matching your page theme */
 }
 
 h2 {
@@ -16,18 +16,21 @@ h2 {
 .feature-boxes {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around; /* Align boxes nicely in the center */
 }
 
 .feature-box {
-  width: 150px; /* Set a fixed width for each box */
-  height: 150px; /* Set a fixed height for each box */
+  width: calc(33.333% - 20px); /* Adjust width for three boxes per row accounting for margin */
+  min-height: 150px; /* Set a fixed height for each box */
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin: 10px;
+  margin: 10px; /* Margin for spacing around boxes */
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Center content vertically and horizontally */
+  background-color: #FFFACD; /* Lighter box background for contrast */
 }
 
 input {

@@ -79,19 +79,21 @@ const FeaturesForm = () => {
 
     return (
         <div className="features-form-container">
-            <h2>The Most Important Features in Your Future University</h2>
+            <h2>Check in The Most Important Features in Your Future University</h2>
             <form onSubmit={handleSubmit}>
-                {Object.entries(features).map(([key, description]) => (
-                    <div key={key} className="feature-box">
-                        <input
-                            type="checkbox"
-                            id={`feature-${key}`}
-                            checked={responses[key]}
-                            onChange={() => handleCheckboxChange(key)}
-                        />
-                        <label htmlFor={`feature-${key}`}>{description}</label>
-                    </div>
-                ))}
+                <div className="feature-boxes">
+                    {Object.entries(features).map(([key, description]) => (
+                        <div key={key} className="feature-box">
+                            <input
+                                type="checkbox"
+                                id={`feature-${key}`}
+                                checked={responses[key]}
+                                onChange={() => handleCheckboxChange(key)}
+                            />
+                            <label htmlFor={`feature-${key}`}>{description}</label>
+                        </div>
+                    ))}
+                </div>
                 <button type="submit">Next Page</button>
             </form>
         </div>
