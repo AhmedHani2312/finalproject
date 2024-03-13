@@ -146,7 +146,7 @@ const Rating = () => {
         ratings: ratingsToSubmit
       });
       console.log("Submission response:", response.data);
-      navigate('/recommendation', { state: { userId } }); // Navigate to recommendations page
+      navigate('/recommendation', { state: { userId ,  selectedFeatures: location.state.selectedFeatures } }); // Navigate to recommendations page
     } catch (error) {
       console.error('Error submitting ratings:', error);
     }

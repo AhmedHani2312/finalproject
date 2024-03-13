@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'; // Removed 'Link' since it's not used
 import './Personalityform.css'; // Import your stylesheet
 import axios from 'axios';
-
 
 const Personalityform = () => {
 
   const navigate = useNavigate();
-
-  const location = useLocation(); // This hook allows us to access the state passed from the navigate function
+  const location = useLocation(); // Access state passed from the navigate function
   const userId = location.state?.userId; // Access userId from state, use optional chaining in case state is undefined
-  const userEmail = location.state?.userEmail; // Access userEmail from state, use optional chaining in case state is undefined
-  
+  const userEmail = location.state?.userEmail; // Access userEmail from state
 
   const [responses, setResponses] = useState({
     1: '',
@@ -38,16 +35,11 @@ const Personalityform = () => {
   
       const response = await axios.post('http://localhost:3000/user/submitPersonalityForm', dataToSend);
       console.log('Form submitted successfully:', response.data);
-
-
       navigate('/features-form', {state:{userId: userId, userEmail: userEmail}}); 
-
     } catch (error) {
       console.error('Error submitting form:', error.response ? error.response.data : error.message);
-      // Handle errors here, such as showing an error message to the user
     }
   };
-  
 
   const questions = [
     "I see myself as open to experience, (Imaginative)",
@@ -56,7 +48,6 @@ const Personalityform = () => {
     "I see myself as agreeable, (Kind)",
     "I see myself as emotionally stable, (Calm)",
   ];
-
 
   return (
     <div className="personality-form-container">
@@ -81,11 +72,7 @@ const Personalityform = () => {
             </div>
           </div>
         ))}
-
-        {/* Next button */}
-        {/* <Link to="/features-form"> */}
-          <button type='submit' >Next Page</button>
-        {/* </Link> */}
+        <button type='submit'>Next Page</button>
       </form>
     </div>
   );

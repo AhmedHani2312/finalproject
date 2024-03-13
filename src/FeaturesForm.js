@@ -56,7 +56,7 @@ const FeaturesForm = () => {
                 user_id: userId,
                 responses: selectedFeatures
             });
-            navigate('/country-choice', { state: { userId, userEmail } }); // Navigate to the next page
+            navigate('/country-choice', { state: { userId, userEmail , selectedFeatures  } }); // Navigate to the next page
         } catch (error) {
             console.error('Error submitting features form:', error);
         }

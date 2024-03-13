@@ -30,7 +30,7 @@ const CountryChoice = () => {
         question_id: 7,
         uni_country: convertedCode
       });
-      navigate('/rating', { state: { userId, userEmail, country: convertedCode } });
+      navigate('/rating', { state: { userId, userEmail, country: convertedCode ,  selectedFeatures: location.state.selectedFeatures } });
     } catch (error) {
       console.error('Error submitting country choice:', error);
     }

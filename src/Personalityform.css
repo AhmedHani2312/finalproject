@@ -1,17 +1,90 @@
 /* Personalityform.css */
 .personality-form-container {
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .question {
-    margin-bottom: 20px;
-  }
-  
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #FFFFE0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.question {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #FFFACD;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.question p {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #444;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.radio-buttons label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8e8e8;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Fix to ensure radio buttons are visible */
+.radio-buttons input[type="radio"] {
+  margin-right: 6px;
+  cursor: pointer;
+  /* Remove any opacity or position styles that hide them */
+}
+
+.radio-buttons label:hover {
+  background-color: #dcdcdc;
+  transform: scale(1.05);
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/* Enhancements for better mobile view */
+@media (max-width: 768px) {
   .radio-buttons {
-    display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  /* Add more styles as needed */
-  
+  .radio-buttons label {
+    width: auto; /* Allows labels to fit content */
+  }
+}
