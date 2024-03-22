@@ -1,68 +1,101 @@
-.signup-container {
-  text-align: center;
-  margin: 50px auto;
-  background-color: rgba(0, 21, 41, 0.85); /* Harmonizing with the theme from the Get Started page */
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-  color: #090909; /* Ensuring text color is white for better visibility */
-  max-width: 600px; /* Defining max width for better form presentation */
+/* Global page settings */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden; /* Hide horizontal scroll */
 }
-body {
-  background-color: #e2db0c; /* Light orange background */
-}  /*8ayar daaaaah backg*/
 
+/* Add this in your Signup.css */
+.university-select, .country-select {
+  margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+
+.signup-page {
+  display: flex;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  min-height: 100vh; /* Ensures full viewport height */
+  background-color: #ffffff; /* Updated to white background */
+}
+
+.signup-content {
+  background: url('../public/images/students.jpg') no-repeat center center;
+  background-size: contain; /* Ensures the entire image is visible */
+  flex: 1 1 500px; /* Flexible sizes for responsive design */
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+}
+
+.signup-form-container {
+  flex: 1 1 400px; /* Flexible sizes for responsive design */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-promo {
+  background-color: #e6e6e6; /* Light grey for a subtle look */
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 14px;
+}
 
 .signup-form {
-  max-width: 500px; /* Setting max width for the internal form */
-  margin: 20px auto; /* Centering the form with automatic margins */
-  padding: 40px; /* Providing ample padding for a spacious layout */
-  background: #f6f6f3; /* Light background for the form to stand out from the container */
-  border-radius: 12px; /* Soft rounded corners for a modern look */
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2); /* Adding a subtle inner shadow for depth */
+  background-color: #0c365c; /* Off-white background for the form */
+  padding: 50px; /* Increased padding for more space */
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Increased width for better layout */
+  max-width: 450px; /* Adjusted max width for better form proportion */
+  margin: 20px auto; /* Auto margins for horizontal centering */
 }
 
-.form-group {
-  margin-bottom: 25px; /* Creating more space between form fields for clarity */
+.signup-form h2 {
+  margin-bottom: 20px; /* Increased spacing for clear separation */
+  text-align: center; /* Center the title */
+  color: #ffffff; /* Darker color for title */
 }
 
-label {
-  display: block; /* Ensuring the label takes its own line for better alignment */
-  margin-bottom: 10px; /* Providing space below the label before the input */
-  font-weight: bold; /* Making text bold for better visibility */
-  color: #333333; /* Using darker text for contrast against the light form background */
+.signup-form input, 
+.signup-form select {
+  width: 100%; /* Full width for all fields */
+  padding: 12px; /* Comfortable padding */
+  margin-bottom: 20px; /* Uniform bottom margin for all elements */
+  border: 2px solid #ddd; /* Consistent light border for all elements */
+  border-radius: 8px; /* Smoothed corners */
+  background-color: #fff; /* White background for input fields */
 }
 
-input, select {
-  width: 100%; /* Full width inputs for better form structure */
-  padding: 15px; /* Ample padding for easier interaction */
-  box-sizing: border-box; /* Ensuring padding doesn't affect overall width */
-  border: 2px solid #cccccc; /* Defining a slightly thicker border for clear boundaries */
-  border-radius: 8px; /* Rounded corners for inputs for a cohesive design language */
-  margin-bottom: 20px; /* More space between inputs for a clean layout */
-  background-color: #ffffff; /* White background for clear distinction of input areas */
-  color: #000000; /* Black text for maximum readability */
+.signup-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #367caa; /* Green color for the action button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; /* Consistent with other elements */
 }
 
-button {
-  background-color: #007bff; /* Using a brighter blue to match theme accents and call to action */
-  color: white; /* White text for clear visibility on the button */
-  padding: 15px 30px; /* Generous padding for a larger, more clickable button */
-  border: none; /* Removing default border for a cleaner look */
-  border-radius: 10px; /* Smooth rounded corners for the button */
-  cursor: pointer; /* Changing cursor to pointer on hover for better user indication */
-  font-size: 18px; /* Increasing font size for better readability and impact */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover effects */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Applying shadow for depth and prominence */
+.signup-form button:hover {
+  background-color: #43a047; /* Slightly darker green for hover effect */
 }
 
-button:hover {
-  background-color: #0056e0; /* Darkening the button on hover for an interactive effect */
-  transform: scale(1.05); /* Slightly enlarging the button on hover for a dynamic response */
+.signup-form small {
+  display: block;
+  margin-top: 25px;
+  text-align: center;
 }
 
-.form-title {
-  margin-bottom: 30px; /* More space below the form title for a structured layout */
-  color: #ffffff; /* White color for the title for standout visibility */
-  font-size: 28px; /* Larger font size for the title for prominence */
+.signup-form a {
+  color: #22a846; /* Keeping the link color for consistency */
+  text-decoration: underline; /* Underline for clarity */
 }

@@ -1,7 +1,20 @@
-/* Rating.css */
 .rating-container {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
+  min-height: 100vh;
+  background-image: url('../public/images/homepage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Wrapper for the universities and the submit button */
+.rating-content-wrapper {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 30px;
+  margin: auto; /* Center the wrapper */
+  max-width: 800px; /* Control the width of the wrapper */
 }
 
 .universities-container {
@@ -9,15 +22,17 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Increase margin for spacing */
 }
 
 .university-box {
   border: 1px solid #ddd;
   padding: 15px;
-  border-radius: 4px;
-  width: 150px;
+  border-radius: 10px;
+  width: 200px; /* Adjust width for consistency */
   text-align: center;
+  background-color: #ffffff; /* Solid white background for readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .university-box span {
@@ -27,16 +42,33 @@
 }
 
 button {
+  background-color: #3ca8d6; /* Consistent button color */
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Smaller button */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size */
+}
+
+button:hover {
+  background-color: #3292d7;
+}
+
+
+.btn-refresh {
+  margin-top: 20px;
   background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
+  font-size: 14px; /* Make the button smaller */
+  display: block; /* Ensure it's a block element */
 }
 
-button:hover {
-  background-color: #45a049;
+
+.btn-submit {
+  margin-top: 10px;
 }

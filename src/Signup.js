@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
-import './Signup.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure this is at the top
 import axios from 'axios';
 import { countries as countriesList } from 'countries-list';
 import universities from './universities.json';
+import './Signup.css'; // Ensure your custom CSS does not conflict with Bootstrap
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -87,27 +88,66 @@ const Signup = () => {
     }));
 
     return (
-        <div className="signup-container">
+        <div className="signup-page">
+        <div className="signup-content"> </div>
+        <div className="signup-form-container">
+            <div className="form-text-content">
+                <h1>Your Future University</h1>
+                <p>Explore and connect with universities worldwide.</p>
+            </div>
             <form className="signup-form" onSubmit={handleSignup}>
-                <h2>Sign Up</h2>
+                <h2 className="form-title">Sign Up</h2>
                 <div className="form-group">
-                    <label>First Name:</label>
-                    <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
+                    <input type="text" placeholder="First Name" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
                 </div>
                 <div className="form-group">
-                    <label>Last Name:</label>
-                    <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
+                    <input type="text" placeholder="Last Name" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
                 </div>
+
                 <div className="form-group">
-                    <label>Gender:</label>
+                    <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
+                </div>
+
+                <div className="form-group university-select">
+    <Select
+        name="university"
+        value={selectedUniversity}
+        onChange={handleUniversityChange}
+        onInputChange={handleUniversityInputChange}
+        options={filteredUniversities}
+        classNamePrefix="select"
+        placeholder="Select a university..."
+        isClearable
+        isSearchable
+    />
+</div>
+
+<div className="form-group country-select">
+    <Select
+        name="country"
+        value={selectedCountry}
+        onChange={handleCountryChange}
+        options={countryOptions}
+        classNamePrefix="select"
+        placeholder="Select a country..."
+        isClearable
+        isSearchable
+    />
+</div>
+
+                
+
+
+                <div className="form-group">
                     <select name="gender" value={formData.gender} onChange={handleInputChange} required>
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                 </div>
+
+                
                 <div className="form-group">
-                    <label>Age Range:</label>
                     <select name="ageRange" value={formData.ageRange} onChange={handleInputChange} required>
                         <option value="">Select Age Range</option>
                         <option value="below18">Below 18</option>
@@ -117,41 +157,13 @@ const Signup = () => {
                         <option value="over55">Over 55</option>
                     </select>
                 </div>
-                <div className="form-group">
-                    <label>Country:</label>
-                    <Select
-                        value={selectedCountry}
-                        onChange={handleCountryChange}
-                        options={countryOptions}
-                        className="basic-single"
-                        classNamePrefix="select"
-                        placeholder="Select a country..."
-                        isClearable
-                        isSearchable
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Email:</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
-                </div>
-                <div className="form-group">
-                    <label>University:</label>
-                    <Select
-                        value={selectedUniversity}
-                        onChange={handleUniversityChange}
-                        onInputChange={handleUniversityInputChange}
-                        options={filteredUniversities}
-                        className="basic-single"
-                        classNamePrefix="select"
-                        placeholder="Select a university..."
-                        isClearable
-                        isSearchable
-                    />
-                </div>
+                
+                
                 <button type="submit">Sign Up</button>
             </form>
         </div>
-    );
+    </div>
+);
 };
 
 export default Signup;

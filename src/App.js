@@ -12,17 +12,17 @@ import './App.css'; // Ensure this points to your updated CSS file
 function Home() {
   return (
     <div className="App">
+      {/* Removed Explore bar code */}
       <header className="App-header">
         <h1 className="welcome-text">Welcome to University Recommender System</h1>
-        <p>Discover the perfect university for your future!</p>
-        <Link to="/signup" className="get-started-btn">
-          Get Started
-        </Link>
-        
+        <p>Discover the perfect university for your future.</p>
+        <Link to="/signup" className="get-started-btn">Get Started</Link>
       </header>
     </div>
   );
 }
+
+
 
 function App() {
   return (

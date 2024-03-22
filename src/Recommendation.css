@@ -1,122 +1,87 @@
 /* General styles for the recommendation form */
 .recommendation-form {
-    max-width: 800px; /* Increased from 600px for more space */
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+    margin: 50px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent for better visibility against the background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Needed for correct positioning inside a potentially positioned parent */
 }
 
-/* Adjusted input and button styles for consistency */
+/* Add background image to the whole page or container */
+body, .recommendation-page { /* Adjust according to your HTML structure */
+    min-height: 100vh;
+    background-image: url('../public/images/homepage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Adjusted input and button styles for consistency and spacing */
 .recommendation-form input[type="text"], 
+.recommendation-form .country-dropdown__control, 
 .recommendation-form button {
-    width: calc(50% - 12px); /* Adjust width for alignment */
-    padding: 12px; /* Slightly increased padding */
-    margin-bottom: 10px; /* Added space between inputs */
-    font-size: 16px; /* Ensure readable font size */
+    width: 100%; /* Use full width for alignment */
+    padding: 15px; 
+    margin-bottom: 20px; /* Increased space between elements */
+    font-size: 16px; 
+    border-radius: 5px; /* Rounded edges for modern look */
 }
 
 .recommendation-form button {
     background-color: #007bff;
+    color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    color: white; /* Make text color consistent */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .recommendation-form button:hover {
     background-color: #0056b3;
 }
 
-.recommendation-form button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
+/* Additional styles for error messages */
+.error-message {
+    color: #ff0000;
+    margin-bottom: 20px; /* Ensure space above inputs */
 }
 
-/* Loading spinner styles */
+/* Loading spinner and additional components */
 .loading-spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 2s linear infinite;
-    margin: 20px auto;
+    margin: 30px auto; /* Centered with more space */
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Styles for the recommendations section */
 .recommendations-section {
-    margin-top: 20px;
-}
-
-.recommendations-section h3 {
-    color: #333;
-    font-size: 24px;
+    margin-top: 30px;
 }
 
 .recommendations-section .university {
+    background-color: #fff;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .recommendations-section .university h4 {
-    margin-top: 0;
-    font-size: 22px; /* Increased size for university names */
     color: #007bff;
+    margin-bottom: 15px; /* More space after titles */
 }
 
-.recommendations-section .university p {
-    margin: 10px 0;
-    font-size: 16px;
-    line-height: 1.6; /* Adjusted for readability */
+.recommendations-section .university p, .recommendations-section .university a {
+    margin-bottom: 10px;
 }
 
 .recommendations-section .university a {
+    display: inline-block; /* Ensure that the link does not stretch the full width */
+    background-color: #f4f4f4;
     color: #007bff;
-    text-decoration: underline;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .recommendations-section .university a:hover {
-    text-decoration: none;
-    color: #0056b3;
-}
-
-.university-name {
-    font-size: 20px; /* Increase font size */
-    font-weight: bold; /* Make it bold */
-    margin-bottom: 5px; /* Add some space below the university name */
-}
-
-/* Ensure links are clearly visible */
-.university a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.university a:hover {
-    text-decoration: underline;
-}
-
-.recommendations-section .university h4 {
-    margin-top: 0;
-    margin-bottom: 10px; /* Add more space below the heading */
-    color: #007bff;
-    font-size: 18px; /* Adjust size as necessary */
-}
-
-/* Styles for error messages */
-.error-message {
-    color: #ff0000;
-    text-align: center;
-    margin-top: 20px;
+    background-color: #e2e2e2; /* Light change on hover for interaction feedback */
 }

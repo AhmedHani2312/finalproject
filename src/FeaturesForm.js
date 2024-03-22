@@ -74,30 +74,34 @@ const FeaturesForm = () => {
         '3.7': 'Size of the University',
         '3.8': 'Research or Internship Opportunities',
         '3.9': 'Party Environment or Extracurricular Activities',
+        'Variety of Courses': 'Variety of Courses',
         // Add as many features as you have
     };
 
     return (
-        <div className="features-form-container">
-            <h2>Check in The Most Important Features in Your Future University</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="feature-boxes">
-                    {Object.entries(features).map(([key, description]) => (
-                        <div key={key} className="feature-box">
-                            <input
-                                type="checkbox"
-                                id={`feature-${key}`}
-                                checked={responses[key]}
-                                onChange={() => handleCheckboxChange(key)}
-                            />
-                            <label htmlFor={`feature-${key}`}>{description}</label>
-                        </div>
-                    ))}
-                </div>
-                <button type="submit">Next Page</button>
-            </form>
+        <div className="features-form-page"> {/* This is the new page wrapper with the background */}
+            <div className="features-form-container">
+                <h2>Check in The Most Important Features in Your Future University</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="feature-boxes">
+                        {Object.entries(features).map(([key, description]) => (
+                            <div key={key} className="feature-box">
+                                <input
+                                    type="checkbox"
+                                    id={`feature-${key}`}
+                                    checked={responses[key]}
+                                    onChange={() => handleCheckboxChange(key)}
+                                />
+                                <label htmlFor={`feature-${key}`}>{description}</label>
+                            </div>
+                        ))}
+                    </div>
+                    <button type="submit" className="btn btn-success mt-3">Next Page</button>
+                </form>
+            </div>
         </div>
     );
+    
 };
 
 export default FeaturesForm;

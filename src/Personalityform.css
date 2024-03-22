@@ -1,59 +1,64 @@
-/* Personalityform.css */
-.personality-form-container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 30px;
-  background-color: #FFFFE0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+body, html {
+  height: 100%;
+  margin: 0;
   font-family: 'Arial', sans-serif;
+  overflow-x: hidden; /* Hide horizontal scroll */
 }
 
-h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-  font-size: 22px;
+.personality-page {
+  display: flex;
+  min-height: 100vh; /* Ensures full viewport height */
+  background-color: #5a8b98;
 }
 
-.question {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #FFFACD;
-  border: 1px solid #ddd;
+.personality-content {
+  flex-basis: 50%; /* Takes up half of the container */
+  background: url('../public/images/personalityform.jpg') no-repeat center center;
+  background-size: cover; /* Covers the entire area of the div */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.personality-form-container {
+  flex-basis: 50%; /* Takes up the other half of the container */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns the form in the center of its container */
+  justify-content: center;
+}
+
+
+
+.form-promo, .question {
+  background-color: #10477b;
   border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #1b1a1a;
+  font-size: larger;
+  width: 100%;
 }
 
 .question p {
-  margin: 0 0 10px 0;
-  font-weight: 600;
-  color: #444;
+  margin: 0;
+  font-weight: bold;
 }
 
 .radio-buttons {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .radio-buttons label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #e8e8e8;
-  padding: 8px 12px;
+  padding: 10px;
   border-radius: 20px;
   margin: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Fix to ensure radio buttons are visible */
-.radio-buttons input[type="radio"] {
-  margin-right: 6px;
-  cursor: pointer;
-  /* Remove any opacity or position styles that hide them */
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .radio-buttons label:hover {
@@ -63,28 +68,69 @@ h2 {
 
 button[type='submit'] {
   width: 100%;
-  padding: 12px 0;
+  padding: 15px;
   background-color: #4caf50;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
+  transition: background-color 0.3s;
 }
 
 button[type='submit']:hover {
   background-color: #45a049;
 }
 
-/* Enhancements for better mobile view */
+/* .personality-form h2 {
+  margin-bottom: 30px;
+  color: #ec4f4f;
+  text-align: center;
+} */
+
+.personality-page .personality-form-container h2 {
+  color: #f6eded; /* Adjust the color as needed */
+  font-size: 40px;
+}
+
+/* Adjustments for the form inputs, selects, and buttons for consistency */
+.personality-form input,
+.personality-form select,
+.personality-form button {
+  width: calc(100% - 24px); /* Adjust width to account for padding */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff; /* Ensure background is white for readability */
+  color: #333; /* Text color for better visibility */
+}
+
+/* Style adjustments for the radio buttons for better alignment and visibility */
+.personality-form .radio-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid layout for options */
+  gap: 10px; /* Space between grid items */
+}
+
+.personality-form .radio-buttons label {
+  justify-content: center; /* Center content in labels */
+  text-align: center; /* Ensure text is centered for better readability */
+}
+
+/* Ensure that the form and its elements are centered and properly spaced on mobile devices */
 @media (max-width: 768px) {
-  .radio-buttons {
-    flex-direction: column;
-    align-items: flex-start;
+  .personality-page {
+      flex-direction: column; /* Stack elements vertically on small screens */
   }
-  .radio-buttons label {
-    width: auto; /* Allows labels to fit content */
+  
+  .personality-content,
+  .personality-form-container {
+      flex: 1 0 auto; /* Allow each section to adjust its size automatically */
+      width: 100%; /* Full width for smaller screens */
+  }
+  
+  .personality-form-container {
+      padding: 20px; /* Less padding on smaller screens for more space */
   }
 }
