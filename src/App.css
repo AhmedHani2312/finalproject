@@ -312,3 +312,16 @@
 .custom-see-video-btn:hover {
   background-color: rgb(146, 10, 10); /* Button background color on hover */
 }
+
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+
+
+
+

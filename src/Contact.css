@@ -1,0 +1,18 @@
+.contact-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-page .back-to-home-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #008cba;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .contact-page .back-to-home-btn:hover {
+    background-color: #005f73;
+  }
+  

@@ -9,6 +9,9 @@ import CountryChoice from './CountryChoice';
 import Rating from './Rating';
 import Recommendation from './Recommendation';
 import UsabilitySurveyForm from './UsabilitySurveyForm';
+import Contact from './Contact';
+
+
 import './App.css';
 
 function Explore() {
@@ -29,14 +32,14 @@ function About() {
   );
 }
 
-function Contact() {
-  return (
-    <div>
-      <h2>Contact Page</h2>
-      <Link to="/" className="back-to-home-btn">Back to Home</Link>
-    </div>
-  );
-}
+// function Contact() {
+//   return (
+//     <div>
+//       <h2>Contact Page</h2>
+//       <Link to="/" className="back-to-home-btn">Back to Home</Link>
+//     </div>
+//   );
+// }
 
 function Home() {
   const [showVideo, setShowVideo] = useState(false);
