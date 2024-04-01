@@ -96,7 +96,8 @@ const FeaturesForm = () => {
                             </div>
                         ))}
                     </div>
-                    <button type="submit" className="btn btn-success mt-3">Next Page</button>
+                    <button type="submit" className="features-form-submit-btn">Submit Features</button>
+
                 </form>
             </div>
         </div>

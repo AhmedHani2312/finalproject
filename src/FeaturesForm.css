@@ -3,8 +3,9 @@
   margin: 50px auto;
   padding: 20px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white background */
+  background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
 }
 
 .features-form-page {
@@ -21,6 +22,7 @@ h2 {
   color: #34495e; /* Dark blue color for better readability */
   text-align: center;
   margin-bottom: 30px; /* More space under the header */
+  font-size: 24px; /* Increased font size for headers */
 }
 
 .feature-boxes {
@@ -36,11 +38,14 @@ h2 {
   background-color: #f8f9fa; /* Soft white background */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer; /* Change cursor on hover */
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+  align-items: center; /* Center align items horizontally */
+  justify-content: center; /* Center align items vertically */
+  text-align: center; /* Center text alignment */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 16px; /* Adjust font size as needed */
 }
+
 
 .feature-box:hover {
   transform: scale(1.05); /* Slightly enlarge boxes on hover */
@@ -51,18 +56,19 @@ input[type="checkbox"] {
   margin-bottom: 10px; /* Space between checkbox and label */
 }
 
-button[type="submit"] {
-  background-color: #4caf50; /* Green background */
+.features-form-submit-btn {
+  background-color: #1358a1; /* Adjust the background color as needed */
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px; /* Adjust the padding as needed */
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 30px; /* More space above the button */
-  transition: background-color 0.3s; /* Smooth background transition */
+  font-size: 18px;
+  margin-top: 20px; /* Adjust the margin to control spacing */
+  width: 100%; /* Make the button fit the container width */
+  transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
-  background-color: #45a049; /* Darker shade of green on hover */
+.features-form-submit-btn:hover {
+  background-color: #04263b; /* Darker shade for hover effect */
 }

@@ -6,39 +6,45 @@ body, html {
   overflow-x: hidden; /* Hide horizontal scroll */
 }
 
-/* Add this in your Signup.css */
+/* Adjust this in your Signup.css for better form field spacing */
 .university-select, .country-select {
   margin-bottom: 20px; /* Adjust this value as needed */
 }
 
-
+/* Signup page styles */
 .signup-page {
   display: flex;
   flex-wrap: wrap; /* Allows content to wrap on smaller screens */
   min-height: 100vh; /* Ensures full viewport height */
-  background-color: #ffffff; /* Updated to white background */
+  background-color: #f4f7f6; /* Subtle background color */
 }
 
 .signup-content {
-  background: url('../public/images/students.jpg') no-repeat center center;
-  background-size: contain; /* Ensures the entire image is visible */
-  flex: 1 1 500px; /* Flexible sizes for responsive design */
+  background: url('../public/images/homepage.jpg') no-repeat center center;
+  background-size: cover; /* Cover the full area */
+  flex: 1; /* Take up full space available */
+  min-width: 500px; /* Minimum width before it wraps */
   color: white;
-  padding: 30px;
+  padding: 60px; /* Increase padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Center content horizontally */
 }
 
 .signup-form-container {
-  flex: 1 1 400px; /* Flexible sizes for responsive design */
+  flex: 0.5; /* Take up full space available */
+  min-width: 400px; /* Minimum width before it wraps */
+  padding: 40px; /* Increase padding */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(134, 155, 180, 0.85); /* Slightly transparent white */
+  border-radius: 0px; /* Rounded corners for aesthetics */
+  
 }
 
+/* Promo styles inside the form */
 .form-promo {
   background-color: #e6e6e6; /* Light grey for a subtle look */
   border-radius: 4px;
@@ -49,44 +55,48 @@ body, html {
   font-size: 14px;
 }
 
+/* Signup form specific styles */
 .signup-form {
   background-color: #0c365c; /* Off-white background for the form */
   padding: 50px; /* Increased padding for more space */
-  border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%; /* Increased width for better layout */
-  max-width: 450px; /* Adjusted max width for better form proportion */
-  margin: 20px auto; /* Auto margins for horizontal centering */
+  border-radius: 30px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+  width: 90%; /* Use majority of the container width */
+  max-width: 450px; /* Maximum width to avoid too wide forms */
+  margin: 20px auto; /* Center the form in the container */
 }
 
 .signup-form h2 {
-  margin-bottom: 20px; /* Increased spacing for clear separation */
-  text-align: center; /* Center the title */
-  color: #ffffff; /* Darker color for title */
+  margin-bottom: 20px; /* Space below the form title */
+  text-align: center; /* Center-align the title */
+  color: #ffffff; /* White color for visibility against the form background */
 }
 
+/* Input and select field styles to ensure consistency */
 .signup-form input, 
 .signup-form select {
-  width: 100%; /* Full width for all fields */
+  width: 100%; /* Full width to utilize form space */
   padding: 12px; /* Comfortable padding */
-  margin-bottom: 20px; /* Uniform bottom margin for all elements */
-  border: 2px solid #ddd; /* Consistent light border for all elements */
-  border-radius: 8px; /* Smoothed corners */
-  background-color: #fff; /* White background for input fields */
+  margin-bottom: 20px; /* Space below each field */
+  border: 2px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Matched corner rounding */
+  background-color: #fff; /* Ensure background is white for readability */
 }
 
+/* Signup button specific styles */
 .signup-form button {
   width: 100%;
   padding: 15px;
-  background-color: #367caa; /* Green color for the action button */
+  background-color: #1760ad; /* Blue color for the action button */
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 8px; /* Consistent with other elements */
+  border-radius: 8px; /* Rounded corners for the button */
+  margin-top: 10px; /* Space between the last input field and the button */
 }
 
 .signup-form button:hover {
-  background-color: #43a047; /* Slightly darker green for hover effect */
+  background-color: #0d519b; /* Slightly darker blue for the hover effect */
 }
 
 .signup-form small {
@@ -96,6 +106,13 @@ body, html {
 }
 
 .signup-form a {
-  color: #22a846; /* Keeping the link color for consistency */
-  text-decoration: underline; /* Underline for clarity */
+  color: #22a846; /* Bright, noticeable link color */
+  text-decoration: underline; /* Underline for clear indication as a link */
+}
+
+
+.signup-page .form-text-content {
+  margin-top: 20px; /* Adds space above the text */
+  text-align: center; /* Centers the text */
+  padding: 20px; /* Adds space around the text */
 }

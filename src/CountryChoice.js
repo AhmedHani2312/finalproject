@@ -51,7 +51,7 @@ const CountryChoice = () => {
                             <option key={code} value={code}>{country.name}</option>
                         ))}
                     </select>
-                    <button type="submit" className="btn btn-primary mt-3">Next Page</button>
+                    <button type="submit" className="btn btn-primary mt-3">Submit Choice</button>
                 </form>
             </div>
         </div>

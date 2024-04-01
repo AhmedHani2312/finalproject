@@ -1,0 +1,123 @@
+/* UsabilitySurveyForm.css */
+.survey-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+  }
+  
+  .survey-content {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .question-block {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  
+  .question-number {
+    font-weight: bold;
+    color: #3498db;
+    margin-right: 10px;
+  }
+  
+  .question-main {
+    flex-grow: 1;
+  }
+  
+  .question-text {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .likert {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+  }
+  
+  .likert-option {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .likert-circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .likert-option:hover .likert-circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .likert-option input[type="radio"]:checked + .likert-circle {
+    box-shadow: 0 0 0px 2px #3498db;
+    transform: scale(1.2);
+  }
+  
+  .likert-label {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .likert-option input[type="radio"] {
+    display: none;
+  }
+  
+  .survey-submit {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    width: 100%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+  
+  .survey-submit:hover {
+    background-color: #2980b9;
+  }
+  
+  @media (max-width: 768px) {
+    .survey-content {
+      width: 95%;
+    }
+    
+    .question-block {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .question-main {
+      width: 100%;
+    }
+    
+    .likert {
+      flex-direction: column;
+    }
+    
+    .likert-option {
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Color classes for likert circles */
+  .strongly-disagree .likert-circle { background-color: #e74c3c; }
+  .disagree .likert-circle { background-color: #cb830f; }
+  .neutral .likert-circle { background-color: #f1c40f; }
+  .agree .likert-circle { background-color: #2ecc71; }
+  .strongly-agree .likert-circle { background-color: #045425; }
+  

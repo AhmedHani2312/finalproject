@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Personalityform.css';
@@ -56,13 +58,15 @@ const PersonalityForm = () => {
                             <p><strong>{index + 1}. {question}</strong></p>
                             <div className="radio-buttons">
                                 {['Strongly Disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly Agree'].map((option) => (
-                                    <label key={option}>
+                                    <label key={option} className="radio-label">
+                                        <div className={`custom-radio-button ${responses[`${index + 1}`] === option ? option.toLowerCase().replace(' ', '-') : ''}`}></div>
                                         <input
                                             type="radio"
                                             name={`${index + 1}`}
                                             value={option}
                                             checked={responses[`${index + 1}`] === option}
                                             onChange={() => handleRadioChange(`${index + 1}`, option)}
+                                            className="hidden-radio"
                                         />
                                         {option}
                                     </label>
@@ -70,7 +74,7 @@ const PersonalityForm = () => {
                             </div>
                         </div>
                     ))}
-                    <button type="submit">Next Page</button>
+                    <button type="submit" className="personality-form-submit-btn">Next Page</button>
                 </form>
             </div>
         </div>

@@ -1,6 +1,6 @@
 /* General styles for the recommendation form */
 .recommendation-form {
-    max-width: 800px; 
+    max-width: 800px;
     margin: 50px auto;
     padding: 40px;
     background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent for better visibility against the background */
@@ -10,7 +10,7 @@
 }
 
 /* Add background image to the whole page or container */
-body, .recommendation-page { /* Adjust according to your HTML structure */
+body, .recommendation-page {
     min-height: 100vh;
     background-image: url('../public/images/homepage.jpg');
     background-size: cover;
@@ -18,19 +18,20 @@ body, .recommendation-page { /* Adjust according to your HTML structure */
     background-repeat: no-repeat;
 }
 
-/* Adjusted input and button styles for consistency and spacing */
-.recommendation-form input[type="text"], 
-.recommendation-form .country-dropdown__control, 
+/* Adjusted input, select and button styles for consistency and spacing */
+.recommendation-form input[type="text"],
+.recommendation-form .country-dropdown__control,
 .recommendation-form button {
     width: 100%; /* Use full width for alignment */
-    padding: 15px; 
-    margin-bottom: 20px; /* Increased space between elements */
-    font-size: 16px; 
-    border-radius: 5px; /* Rounded edges for modern look */
+    padding: 15px;
+    margin-bottom: 30px; /* Increased space between elements */
+    font-size: 16px;
+    border-radius: 5px; /* Rounded edges for a modern look */
 }
 
 .recommendation-form button {
-    background-color: #007bff;
+    margin-top: 20px; /* Additional space above the button */
+    background-color: #5986b6;
     color: white;
     border: none;
     cursor: pointer;
@@ -47,11 +48,36 @@ body, .recommendation-page { /* Adjust according to your HTML structure */
     margin-bottom: 20px; /* Ensure space above inputs */
 }
 
-/* Loading spinner and additional components */
-.loading-spinner {
-    margin: 30px auto; /* Centered with more space */
+/* Styles for the loading container and spinner */
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
 }
 
+.loading-text {
+    margin-right: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.loading-spinner {
+    display: inline-block; /* Changed to show only when loading */
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styles for the recommendations section */
 .recommendations-section {
     margin-top: 30px;
 }
@@ -61,7 +87,7 @@ body, .recommendation-page { /* Adjust according to your HTML structure */
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .recommendations-section .university h4 {
@@ -69,12 +95,13 @@ body, .recommendation-page { /* Adjust according to your HTML structure */
     margin-bottom: 15px; /* More space after titles */
 }
 
-.recommendations-section .university p, .recommendations-section .university a {
+.recommendations-section .university p,
+.recommendations-section .university a {
     margin-bottom: 10px;
 }
 
 .recommendations-section .university a {
-    display: inline-block; /* Ensure that the link does not stretch the full width */
+    display: inline-block; /* Ensure that links do not stretch the full width */
     background-color: #f4f4f4;
     color: #007bff;
     padding: 5px 10px;

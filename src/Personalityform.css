@@ -8,12 +8,12 @@ body, html {
 .personality-page {
   display: flex;
   min-height: 100vh; /* Ensures full viewport height */
-  background-color: #5a8b98;
+  background-color: rgba(196, 193, 193, 0.85); /* Slightly transparent white */
 }
 
 .personality-content {
   flex-basis: 50%; /* Takes up half of the container */
-  background: url('../public/images/personalityform.jpg') no-repeat center center;
+  background: url('../public/images/homepage.jpg') no-repeat center center;
   background-size: cover; /* Covers the entire area of the div */
   padding: 40px;
   display: flex;
@@ -33,9 +33,9 @@ body, html {
 
 
 .form-promo, .question {
-  background-color: #10477b;
-  border-radius: 10px;
-  padding: 20px;
+  background-color: #879daf;
+  border-radius: 20px;
+  padding: 12px;
   margin-bottom: 20px;
   color: #1b1a1a;
   font-size: larger;
@@ -66,45 +66,12 @@ body, html {
   transform: scale(1.05);
 }
 
-button[type='submit'] {
-  width: 100%;
-  padding: 15px;
-  background-color: #4caf50;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button[type='submit']:hover {
-  background-color: #45a049;
-}
-
-/* .personality-form h2 {
-  margin-bottom: 30px;
-  color: #ec4f4f;
-  text-align: center;
-} */
-
 .personality-page .personality-form-container h2 {
-  color: #f6eded; /* Adjust the color as needed */
+  color: #000000; /* Adjust the color as needed */
   font-size: 40px;
 }
 
-/* Adjustments for the form inputs, selects, and buttons for consistency */
-.personality-form input,
-.personality-form select,
-.personality-form button {
-  width: calc(100% - 24px); /* Adjust width to account for padding */
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff; /* Ensure background is white for readability */
-  color: #333; /* Text color for better visibility */
-}
+
 
 /* Style adjustments for the radio buttons for better alignment and visibility */
 .personality-form .radio-buttons {
@@ -134,3 +101,6 @@ button[type='submit']:hover {
       padding: 20px; /* Less padding on smaller screens for more space */
   }
 }
+
+
+
