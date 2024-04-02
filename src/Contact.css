@@ -1,18 +1,104 @@
+/* Contact.css */
+
+/* Reset some default styles for the contact page */
 .contact-page {
-    padding: 20px;
-    text-align: center;
-  }
+  background-image: url('../public/images/contus.jpg'); /* Add your image here */
+
+  padding-top: 100px; /* Adds padding at the top */
+  padding-bottom: 100px; /* Adds padding at the bottom */
+  text-align: center;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  min-height: 100vh; /* Ensures the page takes up full viewport height */
+}
+
+/* Style for the form container with a white transparent background */
+.form-container {
   
-  .contact-page .back-to-home-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #008cba;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  
-  .contact-page .back-to-home-btn:hover {
-    background-color: #005f73;
-  }
-  
+  background-color: rgba(119, 128, 131, 0.637); /* White with transparency for a frosted glass look */
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%; /* Ensures padding on smaller screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 0 auto; /* Centers the container on the page */
+}
+
+/* Styles for input fields */
+.contact-page input[type="text"],
+.contact-page input[type="email"],
+.contact-page textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 5px; /* Rounded borders for the input fields */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Styles for the textarea */
+.contact-page textarea {
+  height: 150px; /* Sets a fixed height for the textarea */
+  resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+/* Styles for the submit button */
+.contact-page input[type="submit"] {
+  background-color: #0d0e0d; /* Darker shade for the button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px; /* Adds spacing between characters */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for the submit button */
+.contact-page input[type="submit"]:hover {
+  background-color: #003354; /* Lighter shade for hover state */
+}
+
+/* Back to home link styling */
+.back-to-home-btn {
+  display: inline-block;
+  background-color: #f2f2f2; /* Light grey background */
+  color: #333; /* Dark text for contrast */
+  padding: 10px 20px;
+  margin-top: 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for the back to home link */
+.back-to-home-btn:hover {
+  background-color: #e1e1e1; /* Slightly darker grey on hover */
+}
+
+/* Contact.css */
+
+/* Styles for the transparent container around the heading */
+.heading-container {
+  background-color: rgba(255, 255, 255, 0.432); /* Semi-transparent white background */
+  border-radius: 10px; /* Optional: rounded corners for the container */
+  display: inline-block; /* Fit to content size */
+  padding: 1rem 3rem; /* Some padding around the text */
+  margin-bottom: 2rem; /* Space below the heading container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+
+/* Adjust the H2 heading styles */
+.contact-page h2 {
+
+  font-size: 2.5rem; /* Increases the font size */
+  color: #000; /* Black color text */
+  margin: 0; /* Reset margin for precise control in the container */
+}
+

@@ -1,6 +1,6 @@
 .rating-container {
   text-align: center;
-  padding: 40px;
+  padding: 40px 40px 150px; /* Increase padding at the bottom for buttons */
   min-height: 100vh;
   background-image: url('../public/images/homepage.jpg');
   background-size: cover;
@@ -10,11 +10,13 @@
 
 /* Wrapper for the universities and the submit button */
 .rating-content-wrapper {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #dfd9d9d9;
   border-radius: 15px;
   padding: 30px;
-  margin: auto; /* Center the wrapper */
-  max-width: 800px; /* Control the width of the wrapper */
+  margin: auto;
+  max-width: 800px;
+  position: relative; /* For relative positioning of the buttons */
+  padding-bottom: 200px; /* Increase space for the buttons */
 }
 
 .universities-container {
@@ -22,40 +24,102 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 30px; /* Increase margin for spacing */
+  margin-bottom: 20px; /* Adjusted to account for button space */
 }
 
 .university-box {
-  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  border: 3px solid #6e5b5b;
   padding: 15px;
   border-radius: 10px;
-  width: 230px; /* Adjust width for consistency */
-  text-align: center;
-  background-color: #ffffff; /* Solid white background for readability */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 230px;
+  background-color: #f0e5e5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.university-box span {
-  display: block;
+.university-box span.university-name {
   margin-bottom: 10px;
   font-weight: bold;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Styles for the star ratings */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
 
+.university-box .star-rating span {
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 24px;
+}
 
-.btn-refresh {
-  margin-top: 20px;
-  background-color: #4caf50;
+.university-box .star-rating span:last-child {
+  margin-right: 0;
+}
+
+/* Colors for star ratings */
+.star-rating .star1 { color: rgb(221, 9, 9); }
+.star-rating .star2 { color: rgb(248, 183, 3); }
+.star-rating .star3 { color: rgb(209, 230, 26); }
+.star-rating .star4 { color: rgb(33, 223, 42); }
+.star-rating .star5 { color: rgba(11, 133, 11, 0.966); }
+/* Button styles */
+.btn-refresh, .btn-submit {
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px; /* Make the button smaller */
-  display: block; /* Ensure it's a block element */
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.btn-refresh {
+  background-color: red; /* Red background for the refresh button */
+  float: left; /* Float to the left */
+}
+
+.btn-refresh:hover {
+  background-color: darkred; /* Darker red on hover */
+}
+
+.btn-submit {
+  background-color: green; /* Green background for the submit button */
+  float: right; /* Float to the right */
+}
+
+.btn-submit:hover {
+  background-color: darkgreen; /* Darker green on hover */
+}
+
+/* Clear floats */
+.buttons-clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
-.btn-submit {
-  margin-top: 10px;
+
+/* Rate the Universities header styles */
+.rating-heading {
+  font-size: 3em; /* Increase the font size */
+  margin-top: 0.5em; /* Add a little space at the top */
+  margin-bottom: 0.5em; /* Add a little space at the bottom */
+  margin-left: 1em;
+  text-align: center; /* Center the text */
+  color: #333; /* Adjust the color as needed */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

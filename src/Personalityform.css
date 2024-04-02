@@ -1,14 +1,16 @@
+
 body, html {
   height: 100%;
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif; /* Updated font-family for better readability */
   overflow-x: hidden; /* Hide horizontal scroll */
 }
 
 .personality-page {
   display: flex;
   min-height: 100vh; /* Ensures full viewport height */
-  background-color: rgba(196, 193, 193, 0.85); /* Slightly transparent white */
+  background-color:#d4d4d3da; /* Slightly transparent white */
+  color: #333; /* Set a default text color for better contrast */
 }
 
 .personality-content {
@@ -30,15 +32,13 @@ body, html {
   justify-content: center;
 }
 
-
-
 .form-promo, .question {
-  background-color: #879daf;
+  background-color: #e4edf0;
   border-radius: 20px;
-  padding: 12px;
+  padding: 20px; /* Increased padding for better spacing */
   margin-bottom: 20px;
   color: #1b1a1a;
-  font-size: larger;
+  font-size: 18px; /* Slightly increased font size for better readability */
   width: 100%;
 }
 
@@ -50,57 +50,50 @@ body, html {
 .radio-buttons {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px; /* Added margin for spacing */
 }
 
 .radio-buttons label {
-  background-color: #e8e8e8;
-  padding: 10px;
+  background-color: #e4edf0; /* Light background color for visibility */
+  padding: 15px; /* Increased padding for bigger touch targets */
   border-radius: 20px;
   margin: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  font-size: 18px; /* Increased font size within buttons for better readability */
 }
 
-.radio-buttons label:hover {
-  background-color: #dcdcdc;
-  transform: scale(1.05);
+.radio-buttons label:hover, .radio-buttons label:active {
+  background-color: #c2d1d9; /* Darker background on hover/active for feedback */
 }
 
-.personality-page .personality-form-container h2 {
-  color: #000000; /* Adjust the color as needed */
-  font-size: 40px;
+.personality-heading {
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  font-size: 2em; /* Maintain increased font size for heading */
+  font-weight: 700; /* Make the font bold */
+  margin-top: 2em; /* Space above the header */
+  margin-bottom: 1.5em; /* Increased space below the header */
+  text-align: center; /* Center the header text */
+  color: #000000; /* Maintain darker color for the heading */
 }
 
-
-
-/* Style adjustments for the radio buttons for better alignment and visibility */
-.personality-form .radio-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid layout for options */
-  gap: 10px; /* Space between grid items */
-}
-
-.personality-form .radio-buttons label {
-  justify-content: center; /* Center content in labels */
-  text-align: center; /* Ensure text is centered for better readability */
-}
-
-/* Ensure that the form and its elements are centered and properly spaced on mobile devices */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .personality-page {
-      flex-direction: column; /* Stack elements vertically on small screens */
+    flex-direction: column; /* Stack elements vertically on small screens */
   }
-  
+
   .personality-content,
   .personality-form-container {
-      flex: 1 0 auto; /* Allow each section to adjust its size automatically */
-      width: 100%; /* Full width for smaller screens */
+    flex: 1 0 auto; /* Allow each section to adjust its size automatically */
+    width: 100%; /* Full width for smaller screens */
   }
-  
+
   .personality-form-container {
-      padding: 20px; /* Less padding on smaller screens for more space */
+    padding: 20px; /* Less padding on smaller screens for more space */
+  }
+
+  .personality-heading {
+    font-size: 1.5em; /* Adjust font size for mobile */
   }
 }
-
-
-

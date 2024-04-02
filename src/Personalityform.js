@@ -40,18 +40,19 @@ const PersonalityForm = () => {
     };
 
     const questions = [
-        "I see myself as open to experience, (Imaginative)",
-        "I see myself as dependable, (Organized)",
-        "I see myself as extroverted, (Enthusiastic)",
-        "I see myself as agreeable, (Kind)",
-        "I see myself as emotionally stable, (Calm)",
+        "I see myself as open to Experience, (Imaginative)",
+        "I see myself as Dependable, (Organized)",
+        "I see myself as Extroverted, (Enthusiastic)",
+        "I see myself as Agreeable, (Kind)",
+        "I see myself as Emotionally stable, (Calm)",
     ];
 
     return (
         <div className="personality-page">
             <div className="personality-content"></div>
             <div className="personality-form-container">
-                <h2>Please let us know a bit more about Yourself!</h2>
+            <h2 className="personality-heading">Please let us know a bit more about yourself!</h2>
+
                 <form onSubmit={handleSubmit}>
                     {questions.map((question, index) => (
                         <div key={index} className="question">

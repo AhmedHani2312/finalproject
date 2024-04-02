@@ -1,0 +1,97 @@
+/* Explore.css */
+.explore-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #0f100f;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.university-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.university-table th,
+.university-table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.university-table th {
+    background-color: #000c08;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.location-header {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start of the flex container */
+    align-items: center;
+    text-align: left; /* Keep text aligned to the left */
+}
+
+.location-filter {
+    padding: 5px;
+    max-width: 150px; /* Smaller width */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-left: 8px; /* Added some space between the location text and filter */
+    background-color: #e7e7e7; /* Different background color */
+    color: black; /* Add color to the dropdown text if needed */
+}
+
+.university-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.university-table tr:hover {
+    background-color: #ddd;
+}
+
+.back-to-home-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-to-home-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollbar styles */
+.table-container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #010c08;
+    border-radius: 6px;
+}

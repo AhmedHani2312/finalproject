@@ -12,9 +12,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #070707;
+  background-color: #000000;
   z-index: 10;
   height: 60px;
+  font-family: sans-serif;
 }
 
 .logo-container {
@@ -130,7 +131,7 @@
 
 
 .back-to-home-btn {
-  background-color: #008cba;
+  background-color: #585b5c;
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
@@ -211,10 +212,10 @@
 .caption-three {
     position: absolute;
     right: 10%; /* Decrease this value to move the text more to the right */
-    bottom: 50%;
-    left: 45%; /* Increase this value to push the text more to the right */
+    bottom: 38%;
+    left: 58%; /* Increase this value to push the text more to the right */
     z-index: 10;
-    color: #1f1e1d; /* Updated color for better visibility */
+    color: #000000fa; /* Updated color for better visibility */
     text-align: right; /* Keep text aligned to the right */
     font-family: 'Roboto'; /* A modern, readable font */
 

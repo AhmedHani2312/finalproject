@@ -10,18 +10,18 @@ import Rating from './Rating';
 import Recommendation from './Recommendation';
 import UsabilitySurveyForm from './UsabilitySurveyForm';
 import Contact from './Contact';
-
+import Explore from './Explore';  
 
 import './App.css';
 
-function Explore() {
-  return (
-    <div>
-      <h2>Explore Page</h2>
-      <Link to="/" className="back-to-home-btn">Back to Home</Link>
-    </div>
-  );
-}
+// function Explore() {
+//   return (
+//     <div>
+//       <h2>Explore Page</h2>
+//       <Link to="/" className="back-to-home-btn">Back to Home</Link>
+//     </div>
+//   );
+// }
 
 function About() {
   return (
@@ -76,9 +76,9 @@ function Home() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src="/images/students2.jpg" alt="Third slide"/>
+              <img className="d-block w-100" src="/images/students4.jpg" alt="Third slide"/>
               <Carousel.Caption className="caption caption-three">
-                <h3>Connect With Your Dream University</h3>
+                <h3>Your Journey Matters....</h3>
                 <p>Start your Journey towards Academic Excellence Today.</p>
               </Carousel.Caption>
             </Carousel.Item>
